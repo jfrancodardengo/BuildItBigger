@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-
+import com.example.jokes.JavaJokes;
 
 /**
  * A placeholder fragment containing a simple view.
