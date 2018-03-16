@@ -16,10 +16,11 @@ import java.io.IOException;
  */
 
 public class EndpointAsyncTask extends AsyncTask<Context, Void, String> {
-    private MyApi myApiService;
+    private MyApi myApiService = null;
     TaskCompleted listener;
 
-    public EndpointAsyncTask() {
+    public EndpointAsyncTask(TaskCompleted listener) {
+        this.listener = listener;
     }
 
     @Override

@@ -21,6 +21,7 @@ import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity implements TaskCompleted {
+    private EndpointAsyncTask endpointAsyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements TaskCompleted {
 
 
     public void tellJoke(View view) {
-        EndpointAsyncTask asyncTask = new EndpointAsyncTask();
+        EndpointAsyncTask asyncTask = endpointAsyncTask = new EndpointAsyncTask(MainActivity.this);
         asyncTask.execute(this);
     }
 
@@ -63,6 +64,5 @@ public class MainActivity extends AppCompatActivity implements TaskCompleted {
         Intent intent = new Intent(this, AndroidActivity.class);
         intent.putExtra(AndroidActivity.JOKE_KEY, response);
         startActivity(intent);
-        Log.d("PIADA: ", response);
     }
 }
