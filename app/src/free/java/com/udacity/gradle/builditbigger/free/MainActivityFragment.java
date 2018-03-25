@@ -1,28 +1,35 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
 
-import android.support.v4.app.Fragment;
+
 import android.os.Bundle;
+import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.example.jokes.JavaJokes;
+import com.udacity.gradle.builditbigger.R;
+
 
 /**
- * A placeholder fragment containing a simple view.
+ * A simple {@link Fragment} subclass.
  */
 public class MainActivityFragment extends Fragment {
 
+
     public MainActivityFragment() {
+        // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_main, container, false);
-
+        // Inflate the layout for this fragment
+        View root = inflater.inflate(R.layout.fragment_main_activity, container, false);
+        Log.d("LOG", " ISFREE");
         AdView mAdView = (AdView) root.findViewById(R.id.adView);
         // Create an ad request. Check logcat output for the hashed device ID to
         // get test ads on a physical device. e.g.
@@ -31,6 +38,8 @@ public class MainActivityFragment extends Fragment {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
         return root;
     }
+
 }
